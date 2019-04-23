@@ -1249,14 +1249,14 @@ input, select, textarea {
 		}
 
 			#header > *:before {
-				content: '';
+				content: ''; /* 內容空的，搭配width，產生白色直線 */
 				display: block;
 				position: absolute;
 				top: calc(-3.5rem - 1px);
 				left: calc(50% - 1px);
 				width: 1px;
-				height: calc(3.5rem + 1px);
-				background: #ffffff;
+				height: calc(3.5rem + 1px); /* 直線的長度，如果是2.5，直線就連不上橫線，空了一格 */
+				background: #ffffff;  /* 網頁上白色直線 */
 			}
 
 		#header > :first-child {
@@ -1281,9 +1281,9 @@ input, select, textarea {
 
 		#header .content {
 			border-style: solid;
-			border-color: #ffffff;
-			border-top-width: 1px;
-			border-bottom-width: 1px;
+			border-color: #ffffff; /* 白色橫線 */
+			border-top-width: 1px; /* inner 的上橫線 */
+			border-bottom-width: 1px; /* inner 的下橫線 */
 			max-width: 100%;
 		}
 
@@ -1296,8 +1296,8 @@ input, select, textarea {
 				-webkit-transition-delay: 0.25s;
 				-ms-transition-delay: 0.25s;
 				transition-delay: 0.25s;
-				padding: 3rem 2rem;
-				max-height: 40rem;
+				padding: 1rem 2rem; /* 前面參數會影響白線與字之間的空間(原來是3rem)上下距離，後面參數會影響線的長短 (原來是2rem) 左右距離*/
+			  max-height: 40rem; /* 設成 0rem ，html ＃inner之中的字會貼下面的橫線 */
 				overflow: hidden;
 			}
 
